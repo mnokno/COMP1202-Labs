@@ -1,4 +1,5 @@
 package lab3part3;
+import lab3part2.CardLock;
 
 /**
  * A door with an optional card lock.

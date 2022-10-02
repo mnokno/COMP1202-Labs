@@ -1,5 +1,8 @@
 package lab3part1;
 
+import lab3part2.CardLock;
+import lab3part3.Door;
+
 public class Tester {
     // Uncomment each part as you go.
     // Remember to test often!
@@ -7,10 +10,10 @@ public class Tester {
         testPart1a();
         testPart1b();
         testPart1c();
-        //testPart2a();
-        //testPart2b();
-        //testPart2c();
-        //testPart3();
+        testPart2a();
+        testPart2b();
+        testPart2c();
+        testPart3();
     }
 
     /**
@@ -65,7 +68,7 @@ public class Tester {
     /**
      * Creating a CardLock and swiping smart cards.
      */
-    /*
+
     public static void testPart2a() {
         System.out.println("Part 2 - Object interactions");
         System.out.println("======");
@@ -91,11 +94,11 @@ public class Tester {
         System.out.println("Last card seen: " + lock.getLastCardSeen().getOwner() + "'s card");
         System.out.println();
     }
-    */
+
     /**
      * Checking lock status of CardLock.
      */
-    /*
+
     public static void testPart2b() {
         System.out.println("--- Part 2b ---");
         System.out.println();
@@ -119,11 +122,11 @@ public class Tester {
         System.out.println("Is the card lock unlocked? " + lock.isUnlocked());
         System.out.println();
     }
-    */
+
     /**
      * Checking lock status of CardLock with student access.
      */
-    /*
+
     public static void testPart2c() {
         System.out.println("--- Part 2c ---");
         System.out.println();
@@ -161,7 +164,7 @@ public class Tester {
         System.out.println("Is the card lock unlocked? " + lock.isUnlocked());
         System.out.println();
     }
-    */
+
     /**
      * Testing a Door class.
      */
@@ -170,5 +173,20 @@ public class Tester {
         System.out.println("======");
 
         // TODO: Write a test harness for the Door class
+        Door door = new Door();
+        door.setRoomName("Research Labs");
+
+        CardLock cardLock = new CardLock();
+        door.attachLock(cardLock);
+
+        SmartCard studentSmartCard = new SmartCard("Someones Name");
+        studentSmartCard.setStaff(false); // To avoid any ambiguity (its set to false by default)
+        cardLock.swipeCard(studentSmartCard);
+        door.openDoor();
+
+        SmartCard staffSmartCard = new SmartCard("Different Name");
+        staffSmartCard.setStaff(true);
+        cardLock.swipeCard(staffSmartCard);
+        door.openDoor();
     }
 }

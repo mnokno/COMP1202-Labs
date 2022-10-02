@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import lab3part1.Tester;
+
 class OutputCapturer {
     private PrintStream origOut;
 

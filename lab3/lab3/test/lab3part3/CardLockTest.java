@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import lab3part1.SmartCard;
+import lab3part2.CardLock;
+
 class CardLockTest {
     CardLock lock;
     SmartCard cardA;

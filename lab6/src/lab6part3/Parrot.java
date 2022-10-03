@@ -1,6 +1,6 @@
 package lab6part3;
 
-public class Parrot extends Omnivore {
+public class Parrot extends Herbivore {
 
     public Parrot(String name, int age){
         super(name, age);

@@ -1,5 +1,9 @@
 package lab4part1;
- import lab4part2.UserGroup;
+//import lab4part2.UserGroup;
+import lab4part2.User;
+import lab4part3.UserGroup;
+
+import java.util.Iterator;
 
 public class Main {
 
@@ -25,8 +29,18 @@ public class Main {
 
         System.out.println(current);
 
-        //UserGroup userGroup = new UserGroup();
-        //userGroup.addSampleData();
-        //userGroup.printUsernames();
+        UserGroup userGroup = new UserGroup();
+        userGroup.addSampleData();
+        userGroup.printUsernames();
+
+        UserGroup administrators = new UserGroup();
+        Iterator<User> allUsers = userGroup.getUserIterator();
+        while (allUsers.hasNext()){
+            User next = allUsers.next();
+            if (next.getUserType() == "admin"){
+                administrators.addUser(next);
+            }
+        }
+
     }
 }

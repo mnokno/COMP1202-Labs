@@ -3,6 +3,8 @@ package lab4part3;
 import lab4part2.User;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 public class UserGroup {
 
@@ -13,8 +15,9 @@ public class UserGroup {
     }
 
     public void addSampleData(){
+        Random random = new Random();
         for (int i = 0; i < 10; i++){
-            users.add(new User(Integer.toString(i), Integer.toString(i), Integer.toString(i)));
+            users.add(new User(Integer.toString(i), random.nextBoolean() ? "admin" : "other", Integer.toString(i)));
         }
     }
 
@@ -36,8 +39,25 @@ public class UserGroup {
         users.remove(users.size() - 1);
     }
 
-    public void removerUser(String username){
+    public void removeUser(String username){
         // Let's assume that duplicated usernames are not allowed
-        //TODO
+        int indexToRemove = -1;
+        for (int i = 0; i < users.size(); i++){
+            if (users.get(i).getUsername() == username){
+                indexToRemove = i;
+                break;
+            }
+        }
+        if (indexToRemove != -1){
+            users.remove(indexToRemove);
+        }
+    }
+
+    public Iterator<User> getUserIterator(){
+        return users.iterator();
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }

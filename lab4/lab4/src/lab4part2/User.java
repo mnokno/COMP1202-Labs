@@ -15,8 +15,9 @@ public class User {
         return username;
     }
 
+
     public String getUserType(){
-        return  userType;
+        return userType;
     }
 
     public String getName(){

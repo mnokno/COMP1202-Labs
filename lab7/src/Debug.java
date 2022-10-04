@@ -33,15 +33,16 @@ public class Debug{
     }
 
     public static int fibonacci(int number){
-        if(number <2){
+        if(number < 3){
             return 1;
         }
-        return fibonacci(number-1) + fibonacci(number -2);
+        return fibonacci(number - 1) + fibonacci(number - 2);
     }
 
     public static int count() {
         int count = 0;
 
+        // this is an infinite loop because aMethod always sets bl to false
         while(!bl){
             bl = true;
             count = count + aMethod();

@@ -1,4 +1,4 @@
-package lab4part1;
+package lab4part2;
 
 import java.util.Iterator;
 
@@ -25,5 +25,9 @@ public class Main {
         }
 
         System.out.println(current);
+
+        UserGroup userGroup = new UserGroup();
+        userGroup.addSampleData();
+        userGroup.printUsernames();
     }
 }

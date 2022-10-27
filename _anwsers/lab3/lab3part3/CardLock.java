@@ -1,4 +1,4 @@
-package lab3part2;
+package lab3part3;
 
 public class CardLock {
 

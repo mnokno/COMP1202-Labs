@@ -1,7 +1,4 @@
-package lab3part1;
-
-import lab3part2.CardLock;
-import lab3part3.Door;
+package lab3part3;
 
 public class Tester {
     // Uncomment each part as you go.

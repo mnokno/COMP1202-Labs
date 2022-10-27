@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import lab3part1.SmartCard;
-
 class SmartCardTest {
 
     @Test

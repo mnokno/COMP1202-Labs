@@ -47,30 +47,38 @@ public class ATM {
         // Initialization (ask for bank balance)
         System.out.println(initMessage);
         bankBalance = toolbox.readIntegerFromCmd();
+        while (bankBalance < 0){
+            bankBalance = toolbox.readIntegerFromCmd();
+        }
         System.out.println((bankBalance));
 
-        // Options (asks the user what actions they want to perform)
-        System.out.println(optionsMessage);
-        int action = toolbox.readIntegerFromCmd();
-        // NOTE: from my understanding the task want us to use multiple if statements
-        // instead of if followed by multiple if else statements
-        if (action == 1){
-            withdraw();
-        }
-        else if (action == 2){
-            deposit();
-        }
-        else if (action == 3){
-            inquire();
-        }
-        else if (action == 4){
-            quit();
+        while (true){
+            // Options (asks the user what actions they want to perform)
+            System.out.println(optionsMessage);
+            int action = toolbox.readIntegerFromCmd();
+            // NOTE: from my understanding the task want us to use multiple if statements
+            // instead of if followed by multiple if else statements
+            if (action == 1){
+                withdraw();
+            }
+            if (action == 2){
+                deposit();
+            }
+            if (action == 3){
+                inquire();
+            }
+            if (action == 4){
+                quit();
+            }
         }
     }
 
     private void withdraw(){
         System.out.println(withdrawMessage);
         int input = toolbox.readIntegerFromCmd();
+        while (input < 0 || bankBalance - input < 0){
+            input = toolbox.readIntegerFromCmd();
+        }
         bankBalance -= input;
         System.out.println(MessageFormat.format(withdrawMessageEnd, bankBalance));
     }
@@ -78,6 +86,9 @@ public class ATM {
     private void deposit(){
         System.out.println(depositMessage);
         int input = toolbox.readIntegerFromCmd();
+        while (input < 0){
+            input = toolbox.readIntegerFromCmd();
+        }
         bankBalance += input;
         System.out.println(MessageFormat.format(depositMessageEnd, bankBalance));
     }
@@ -88,5 +99,6 @@ public class ATM {
 
     private void quit(){
         System.out.println(quitMessage);
+        System.exit(0);
     }
 }

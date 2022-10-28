@@ -1,8 +1,6 @@
-package lab8part1;
+package lab8part2;
 
-import java.util.Collection;
-
-public abstract class Animal{
+public abstract class Animal implements Comparable<Animal> {
 
     private String name;
     private int age;
@@ -32,5 +30,10 @@ public abstract class Animal{
         for (int i = 0; i < quantity; i++){
             eat(food);
         }
+    }
+
+    @Override
+    public int compareTo(Animal other){
+        return -Integer.compare(other.age, this.age);
     }
 }

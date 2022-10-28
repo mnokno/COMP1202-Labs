@@ -1,3 +1,5 @@
+package lab8part1;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
